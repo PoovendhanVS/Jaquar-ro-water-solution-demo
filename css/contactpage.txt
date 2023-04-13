@@ -1,0 +1,55 @@
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+
+
+
+    <div class="col-md-6">  
+    <div class="container-fluid fluid-1">
+      <div class="container content-3">   
+        <fieldset>
+          <legend><h2 style="text-align: center;"><b>Place Order</b></h2></legend>
+            <form class="row g-3 needs-validation" novalidateaction="order.php" method="POST">
+            <label  for="validationCustom01" class="form-label">Email</label>
+            <input type="text" class="form-control" id="validationCustom02" value="" required>
+              <div class="invalid-feedback">Please choose a username.</div>
+            <label  for="validationCustom01" class="form-label">Email</label>
+            <input type="text" class="form-control" id="validationCustom02" value="" required>
+            <div class="invalid-feedback">Please choose a username.</div>
+            <label  for="validationCustom01" class="form-label">Phone</label>
+            <input type="text" class="form-control" id="validationCustom02" value="" required>
+            <div class="invalid-feedback">Please choose a username.</div>
+            <label for="validationCustom04" class="form-label">District(Only in Tamilnadu)</label>
+              <select class="form-select" id="validationCustom04" required>
+                <option class="input-group" selected hidden value="">Select District</option>
+                <option class="input-group">Erode</option>
+                <option class="input-group">Thirupur</option>
+                <option class="input-group">Karur</option>
+                <option class="input-group">Namakkal</option>
+                <option class="input-group">Selam</option>
+              </select>
+            <div class="invalid-feedback">Please choose a username.</div><br>
+
+            <button src="font-family: 'Poppins';" type="submit" class="button-input-group" name="submit">Submit</button>
+            </form>
+        </fieldset>
+      </div>
+    </div>
+  </div>
